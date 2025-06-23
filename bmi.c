@@ -1,11 +1,23 @@
+//link al repositorio:https://github.com/leonnadia/tp-info1 
 #include <stdio.h>
 
 int main(int argc, char *argv[]) {
 	float peso,altura, imc;
-	printf("ingrese su peso en kg:\n");
+	printf("ingrese su peso en kg: ");
 	scanf("%f",&peso);
-	printf("ingrese su altura en metros:\n");
+	while (peso<=0){
+		printf("error, el peso debe ser un valor positivo\n");
+		printf("ingrese nuevamente su peso en kg: ");
+		scanf("%f",&peso);
+	}
+		
+	printf("ingrese su altura en metros: ");
 	scanf("%f",&altura);
+	while (altura<=0){
+		printf("error, la altura debe ser un valor positivo\n");
+		printf("ingrese nuevamente su altura en metros:");
+		scanf("%f",&altura);
+	}
 	
 	imc=peso/(altura*altura);
 	printf("Su indice de masa corporal es %.2f\n",imc);
